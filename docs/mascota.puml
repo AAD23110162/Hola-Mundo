@@ -1,0 +1,51 @@
+@startuml mascota 
+
+class Mascota 
+class Alimento
+class Juguete
+class Pelota 
+class Carne
+
+class Ropa 
+Class Camisa 
+Class Pantalon
+class Galleta
+class Accesorio
+class Emocion
+Class Felicidad
+Class Tristeza 
+Class Enojo
+Class Desagrado
+Class Fruta
+Class Verdura
+class Collar
+class Moño
+class Sombrero
+class Peluche
+class Agua
+
+Alimento --o Mascota
+Mascota o--Juguete
+Carne--|>Alimento
+Pelota--|>Juguete
+
+
+Pantalon--|>Ropa 
+Camisa--|>Ropa 
+Galleta--|>Alimento
+Fruta--|>Alimento
+Verdura--|>Alimento
+Ropa--|>Accesorio
+Accesorio --o Mascota
+Emocion --* Mascota
+Enojo--|>Emocion
+Tristeza--|>Emocion
+Felicidad--|>Emocion
+Desagrado--|>Emocion
+Collar--|>Accesorio
+Moño--|>Accesorio
+Sombrero--|>Accesorio
+Peluche--|>Juguete
+Mascota o--Agua
+
+@enduml
