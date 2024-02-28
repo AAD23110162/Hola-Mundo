@@ -1,43 +1,97 @@
 @startuml mascota 
 
-class Mascota 
-class Alimento
-class Juguete
-class Pelota 
-class Carne
+class Mascota
+{
+    -emocion:Emocion
+    +Comer(Alimento)
+    +Beber(Agua)
+    +Jugar(Juguete)
+    +Poner(Accesorio)
 
-class Ropa 
-Class Camisa 
-Class Pantalon
-class Galleta
+}
+
+class Alimento
+{
+    -carne:Carne
+    -galleta:Galleta
+    -verdura:Verdura
+    -fruta:Fruta
+}
+class Juguete
+{
+    -frisbee:Frisbee
+    -pelota:Pelota
+    -peluche:Peluche
+}
+
 class Accesorio
+{
+    -sombrero:Sombrero
+    -moño:Moño
+    -collar:Collar
+    -ropa:Ropa
+}
+
 class Emocion
-Class Felicidad
-Class Tristeza 
-Class Enojo
-Class Desagrado
-Class Fruta
-Class Verdura
-class Collar
-class Moño
-class Sombrero
-class Peluche
+{
+    -desagrado:Desagrado
+    -enojo:Enojo
+    -tristeza:Tristeza
+    -felicidad:Felicidad
+}
+
+package Emociones
+{
+    Class Felicidad
+    Class Tristeza 
+    Class Enojo
+    Class Desagrado
+}
+
+package Alimentos
+{
+    Class Fruta
+    Class Verdura
+    class Galleta
+    class Carne
+}
+
+package Juguetes
+{
+    class Peluche
+    class Pelota
+    class Frisbee
+}
+
+package Accesorios
+{
+    class Ropa
+    class Collar
+    class Moño
+    class Sombrero
+}
+
+Package Ropas
+{
+    Class Pantalon 
+    Class Sueter 
+}
+
 class Agua
 
-Alimento --o Mascota
-Mascota o--Juguete
+Alimento "*"--o "1" Mascota
+Mascota "1" o-- "3" Juguete
 Carne--|>Alimento
 Pelota--|>Juguete
 
-
 Pantalon--|>Ropa 
-Camisa--|>Ropa 
+Sueter--|>Ropa 
 Galleta--|>Alimento
 Fruta--|>Alimento
 Verdura--|>Alimento
 Ropa--|>Accesorio
-Accesorio --o Mascota
-Emocion --* Mascota
+Accesorio "6"--o "1" Mascota
+Emocion "*"--*"1" Mascota
 Enojo--|>Emocion
 Tristeza--|>Emocion
 Felicidad--|>Emocion
@@ -46,6 +100,7 @@ Collar--|>Accesorio
 Moño--|>Accesorio
 Sombrero--|>Accesorio
 Peluche--|>Juguete
-Mascota o--Agua
+Frisbee--|>Juguete
+Mascota "1" o--"*" Agua
 
 @enduml
