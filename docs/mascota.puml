@@ -90,7 +90,7 @@ Galleta--|>Alimento
 Fruta--|>Alimento
 Verdura--|>Alimento
 Ropa--|>Accesorio
-Accesorio "6"--o "1" Mascota
+Accesorio "5"--o "1" Mascota
 Emocion "*"--*"1" Mascota
 Enojo--|>Emocion
 Tristeza--|>Emocion
